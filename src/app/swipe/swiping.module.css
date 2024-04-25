@@ -1,0 +1,21 @@
+.card {
+  transform: translate3d(var(--_x, 0), var(--_y, 0), 0)
+    rotate(var(--_rotate, 0deg));
+}
+
+.card[data-reached-threshold="true"] {
+  transform: translate3d(
+      calc(var(--_x, 0) + 25% * var(--_dir, 1)),
+      var(--_y, 0),
+      0
+    )
+    rotate(var(--_rotate, 0deg)) scale(0.9);
+  opacity: 0;
+}
+
+.card,
+.card * {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
